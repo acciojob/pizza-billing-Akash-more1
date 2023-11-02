@@ -8,14 +8,16 @@ public class DeluxePizza extends Pizza {
         if(isVeg){
             super.bill+="Extra Cheese Added: "+cheese+"\n";
             super.bill+="Extra Toppings Added: "+topVege+"\n";
-            super.totalPrice+=super.cheese+super.topVege;
             super.price+=super.cheese+super.topVege;
+            super.isCheeseAdd=true;
+            super.isTopAdd=true;
         }
         else{
             super.bill+="Extra Cheese Added: "+cheese+"\n";
             super.bill+="Extra Toppings Added: "+topNonVege+"\n";
-            super.totalPrice+=super.cheese+super.topNonVege;
             super.price+=super.cheese+super.topVege;
+            super.isCheeseAdd=true;
+            super.isTopAdd=true;
         }
 
 
