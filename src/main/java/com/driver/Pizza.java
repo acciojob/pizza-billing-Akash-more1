@@ -23,7 +23,7 @@ public class Pizza {
         else{
             this.price=400;
         }
-        this.bill="Base Price Of The Pizza: "+price+"\n";
+      //  this.bill="Base Price Of The Pizza: "+price+"\n";
 
 
         isCheeseAdd=false;
@@ -39,7 +39,7 @@ public class Pizza {
 
     public void addExtraCheese(){
         if(isCheeseAdd==false){
-            this.bill+="Extra Cheese Added: "+cheese+"\n";
+           // this.bill+="Extra Cheese Added: "+cheese+"\n";
             this.price+=cheese;
             isCheeseAdd=true;
         }
@@ -47,14 +47,14 @@ public class Pizza {
     }
 
     public void addExtraToppings(){
-        this.addExtraCheese();
+       // this.addExtraCheese();
         if(isTopAdd==false){
             if(isVeg){
-                this.bill+="Extra Toppings Added: "+topVege+"\n";
+              //  this.bill+="Extra Toppings Added: "+topVege+"\n";
                 this.price+=topVege;
             }
             else{
-                this.bill+="Extra Toppings Added: "+topNonVege+"\n";
+              //  this.bill+="Extra Toppings Added: "+topNonVege+"\n";
                 this.price+=topNonVege;
             }
             isTopAdd=true;
@@ -65,15 +65,44 @@ public class Pizza {
 
     public void addTakeaway(){
         if(isBagAdd==false){
-            this.bill+="Paperbag Added: "+paperBag+"\n";
+            //this.bill+="Paperbag Added: "+paperBag+"\n";
             this.price+=paperBag;
             isBagAdd=true;
         }
 
     }
 
-    public String getBill(){
-        this.bill+="Total Price: "+price;
-        return this.bill;
+//    public String getBill(){
+//        this.bill+="Total Price: "+price;
+//        return this.bill;
+//    }
+public String getBill(){
+    // your code goes here
+    if(isVeg){
+        bill = "Base Price Of The Pizza: 300 \n";
     }
+    else{
+        bill = "Base Price Of The Pizza: 400 \n";
+    }
+
+    if(isCheeseAdd){
+        bill += "Extra Cheese Added: 80 \n";
+    }
+
+    if(isTopAdd){
+        if(isVeg){
+            bill += "Extra Toppings Added: 70 \n";
+        }
+        else{
+            bill += "Extra Toppings Added: 120 \n";
+        }
+    }
+
+    if(isBagAdd){
+        bill += "Paperbag Added: 20 \n";
+    }
+
+    bill += "Total Price: " + this.price;
+    return this.bill;
+}
 }
